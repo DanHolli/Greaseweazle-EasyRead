@@ -23,7 +23,7 @@ FONT_LOG  = ("Consolas", 10)
 # gw.exe must be in SAME folder as this script
 if platform.system()=="Windows":
     GW = os.path.join(os.path.dirname(__file__), "gw.exe")
-else if platform.system()=="Linux":
+elif platform.system()=="Linux":
     GW = "gw"
 else:
     print("Your OS is not yet supported")
