@@ -23,8 +23,11 @@ FONT_LOG  = ("Consolas", 10)
 # gw.exe must be in SAME folder as this script
 if platform.system()=="Windows":
     GW = os.path.join(os.path.dirname(__file__), "gw.exe")
+else if platform.system()=="Linux":
+    GW = "gw"
 else:
-    GW = os.path.join(os.path.dirname(__file__), "gw")
+    print("Your OS is not yet supported")
+    quit
 
 FORMATS = [
     "ibm.1440","ibm.720","ibm.1200","ibm.360","atarist.720","amiga.amigados"
