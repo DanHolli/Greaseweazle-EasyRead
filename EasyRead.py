@@ -4,6 +4,7 @@ import threading
 import re
 import os
 import queue
+import platform #for os detection
 
 # ================== GUI COLOR THEME ==================
 BG_MAIN   = "#1e1e1e"
@@ -20,7 +21,10 @@ FONT_LOG  = ("Consolas", 10)
 # =====================================================
 
 # gw.exe must be in SAME folder as this script
-GW = os.path.join(os.path.dirname(__file__), "gw.exe")
+if platform.system()=="Windows":
+    GW = os.path.join(os.path.dirname(__file__), "gw.exe")
+else:
+    GW = os.path.join(os.path.dirname(__file__), "gw")
 
 FORMATS = [
     "ibm.1440","ibm.720","ibm.1200","ibm.360","atarist.720","amiga.amigados"
