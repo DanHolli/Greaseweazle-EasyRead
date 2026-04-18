@@ -4,7 +4,7 @@ import threading
 import re
 import os
 import queue
-import platform #for os detection
+import platform # for os detection
 
 # ================== GUI COLOR THEME ==================
 BG_MAIN   = "#1e1e1e"
@@ -20,10 +20,10 @@ FONT_UI   = ("Segoe UI", 10)
 FONT_LOG  = ("Consolas", 10)
 # =====================================================
 
-# gw.exe must be in SAME folder as this script
-if platform.system()=="Windows":
-    GW = os.path.join(os.path.dirname(__file__), "gw.exe")
-elif platform.system()=="Linux":
+print("System OS detected as "+platform.system()) # print detected OS for diagnostics
+if platform.system()=="Windows": # gw.exe must be in SAME folder as this script
+    GW = os.path.join(os.path.dirname(__file__), "gw.exe") 
+elif platform.system()=="Linux": # gw must be in PATH
     GW = "gw"
 else:
     print("Your OS is not yet supported")
@@ -241,3 +241,4 @@ class App:
 
 if __name__ == "__main__":
     App().run()
+
